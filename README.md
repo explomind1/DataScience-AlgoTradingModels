@@ -1,1 +1,6 @@
 # DataScience-AlgoTradingModels
+The algorithmic trading models contained in this repository are designed to leverage the power of data science techniques in making informed trading decisions. Data science has become a crucial tool in the finance industry, as it allows traders to extract insights from vast amounts of financial data and gain an edge in the markets. By implementing these models, traders can automate the decision-making process and increase the efficiency and accuracy of their trading strategies.
+
+The models in this repository have been developed for various financial markets, including stocks, commodities, and cryptocurrencies. They use a variety of data science techniques, such as moving averages, mean reversion, momentum, Bollinger Bands, and Relative Strength Index (RSI), to identify trading opportunities and generate signals for buying or selling assets.
+
+By providing a collection of algorithmic trading models developed with data science techniques, this repository aims to empower traders with the tools and knowledge they need to succeed in today's fast-paced financial markets. Whether you are a seasoned trader looking to refine your trading strategies or a beginner interested in learning more about algorithmic trading, this repository has something to offer.

@@ -1,0 +1,14 @@
+
+if u have implemented dozens of indicator and u know how ot deal with them all, then time to optimize the intraday trading!
+
+THERE ARE MANY WAYS you could improve how the fractals are defined:
+- finding support and resistance with certain angles!(or multiple top/bottom ext)
+- letting user know when the price has crossed/touched the designated level(though mail/messeage ext)
+- check if the stocks exists, dont overwrite it!
+- it work very well with daily charts! how to make it more sensitive!here is the hwo u can do it: https://stackoverflow.com/questions/9673988/intraday-candlestick-charts-using-matplotlib
+$ pip install finplot - finance plot is much better compared to matplot ext!
+
+----https://pypi.org/project/finplot/
+
+OMG- fplt.play_sound('bot-happy.wav') # Ooh! Watch me - I just made a profit!
+

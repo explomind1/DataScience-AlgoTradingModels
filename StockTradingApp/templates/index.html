@@ -1,0 +1,91 @@
+<html>  
+     <head>
+        <title >  Stocks </title>   
+     </head>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+     <body>
+      
+        <div class="ui container"> 
+            <h1> Stock List</h1>
+            <!-- <form>  -->
+            <form method="get"> 
+
+                <select name="filter"> 
+                    <option value ="">All Stocks</option>
+                    
+                    <option value ="new_closing_highs">New Closing Highs</option>
+                    
+                    <option value ="new_closing_lows">New Closing Lows</option> 
+
+                </select>
+
+                <select name="RSI Filter"> 
+                    <option value ="">All Stocks</option>
+                    <option value ="RSI30">RSI_30</option> 
+                    <option value ="RSI70">RSI_70</option> 
+                </select>  
+
+                <input type="submit"/>
+                
+
+                    <!-- <div class="ui checkbox">
+                        <input name="rsi70" type="checkbox" name="example" {% if rsi70 %}checked="checked"{% endif %}>
+                        <label>Above RSI70</label>
+                    </div>
+
+                    <div class="ui checkbox">
+                        <input name="rsi30" type="checkbox" name="example" {% if rsi30 %}checked="checked"{% endif %}>
+                        <label>Below RSI30</label>
+                    </div>
+                    <button type="submit" class="ui button primary"> Filter </button> --> 
+                  
+                    
+            </form>
+            <!-- </form> -->
+
+
+                    <table class="ui striped table"> 
+                        <!-- # or inverted blue table -->
+                            <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>RSI</th>
+                                <th>SMA_20</th>
+                                <th>SMA_50</th>
+                                <!-- <th class="right aligned">View</th> -->
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for stock in stocks%}
+                                <tr> 
+                                    <!-- <td>{{ stock.id }}</td> -->
+                                <td>{{ stock.symbol }}</td>
+                                <td><a href="/stock/{{stock.symbol}} ">{{ stock.name }}</a></td>
+                                {% if indicator_values[stock.symbol] %}
+                                    <td>{{indicator_values[stock.symbol].close}} </td>
+
+                                    {%if indicator_values[stock.symbol].rsi_14 %}
+                                    <td>{{indicator_values[stock.symbol].rsi_14|round(2)}} </td>
+                                    {% endif %}
+                                    {%if indicator_values[stock.symbol].sma_20 %}
+                                    <td>{{indicator_values[stock.symbol].sma_20|round(2)}} </td>
+                                    {% endif %}
+                                    {%if indicator_values[stock.symbol].sma_50 %}
+                                    <td>{{indicator_values[stock.symbol].sma_50|round(2)}} </td>
+                                    {% endif %}
+                                    {%else%}
+                                        <td>N/A</td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                </table>
+        </div>
+         
+    </body>
+</html>
